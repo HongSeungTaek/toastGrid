@@ -3,9 +3,16 @@
     <head>
         <meta charset="utf-8">
 
-        <link rel="stylesheet" href="https://uicdn.toast.com/grid/latest/tui-grid.css" />
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+        <!-- Toast Data Grid -->
+        <link rel="stylesheet" href="https://uicdn.toast.com/grid/latest/tui-grid.css" />
         <script src="https://uicdn.toast.com/grid/latest/tui-grid.js"></script>
+
+        <!-- Toast Pagenation -->
+        <link rel="stylesheet" href="https://uicdn.toast.com/tui.pagination/latest/tui-pagination.css" />
+        <script src="https://uicdn.toast.com/tui.pagination/latest/tui-pagination.js"></script>
+
         <script src="js/script.js"></script>
 
     </head>
@@ -13,7 +20,12 @@
     <body>
         <h1>Toast Grid Example</h1>
         <div class="container">
-         <div id="grid"></div>
+            <div class="container-grid">
+                <div id="grid"></div>
+            </div>
+            <div class="container-pagenation">
+                <div id="tui-pagination-container" class="tui-pagination"></div>
+            </div>
         </div>
 
     </body>
