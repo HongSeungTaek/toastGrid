@@ -6,19 +6,15 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 
     <!-- Toast Data Grid -->
-    <link rel="stylesheet" href="https://uicdn.toast.com/grid/latest/tui-grid.css" />
-    <script src="https://uicdn.toast.com/grid/latest/tui-grid.js"></script>
-
-    <!-- Toast Pagenation -->
-    <link rel="stylesheet" href="https://uicdn.toast.com/tui.pagination/latest/tui-pagination.css" />
-    <script src="https://uicdn.toast.com/tui.pagination/latest/tui-pagination.js"></script>
+    <script src="https://uicdn.toast.com/tui-tree/latest/tui-tree.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://uicdn.toast.com/tui-tree/latest/tui-tree.css" />
 
     <!-- bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
 
-    <link rel="stylesheet" href="css/css.css" />
-    <script src="js/script.js"></script>
+    <link rel="stylesheet" href="../css/css.css" />
+    <script src="../js/tree.js"></script>
   </head>
 
   <body>
@@ -28,7 +24,7 @@
           <a href="index.html">메인 그리드</a>
         </li>
         <li>
-          <a href="views/tree.html">트리</a>
+          <a href="index.html">다음 메뉴</a>
         </li>
       </ul>
     </div>
@@ -36,10 +32,9 @@
       <div class="article">
         <h1>Toast UI Grid Example</h1>
           <div class="container-grid">
-            <div id="grid"></div>
-          </div>
-          <div class="container-pagenation">
-            <div id="tui-pagination-container" class="tui-pagination"></div>
+            <div>
+              <div id="tree" class="tui-tree-wrap"></div>
+            </div>
           </div>
       </div>
     </div>
