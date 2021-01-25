@@ -1,14 +1,19 @@
 const Tree = tui.Tree;
 
 
-document.addEventListener("DOMContentLoaded", function(){
-  function addEventListener(element, eventName, handler) {
-      if (element && element.addEventListener) {
-          element.addEventListener(eventName, handler, false);
-      } else {
-          element.attachEvent('on' + eventName, handler);
+$(function(){
+  var util = {
+    addEventListener: function(element, eventName, handler) {
+      if(element) {
+        if (element.addEventListener) {
+            element.addEventListener(eventName, handler, false);
+        } else {
+            element.attachEvent('on' + eventName, handler);
+        }
       }
-  }
+    }
+  };
+
 
   var data = [
     {text: 'rootA', children: [
@@ -51,24 +56,24 @@ document.addEventListener("DOMContentLoaded", function(){
   var rootNodeId = tree.getRootNodeId();
   var firstChildId = tree.getChildIds(rootNodeId)[0];
 
-  addEventListener(addChildBtn, 'click', function() {
+  util.addEventListener(addChildBtn, 'click', function() {
     tree.add({text:'hello world'}, firstChildId);
   });
 
-  addEventListener(removeChildBtn, 'click', function() {
-    var lastGrandChildId = tree.getChildIds(firstChildId).slice(-1)[0];
-    tree.remove(lastGrandChildId);
+  util.addEventListener(removeChildBtn, 'click', function() {
+      var lastGrandChildId = tree.getChildIds(firstChildId).slice(-1)[0];
+      tree.remove(lastGrandChildId);
   });
 
-  addEventListener(sortBtn, 'click', function() {
-    tree.sort(function(nodeA, nodeB) {
-        var aValue = nodeA.getData('text'),
-            bValue = nodeB.getData('text');
+  util.addEventListener(sortBtn, 'click', function() {
+      tree.sort(function(nodeA, nodeB) {
+          var aValue = nodeA.getData('text'),
+              bValue = nodeB.getData('text');
 
-        if (!aValue.localeCompare) {
-            return 0;
-        }
-        return aValue.localeCompare(bValue);
-    });
+          if (!aValue.localeCompare) {
+              return 0;
+          }
+          return aValue.localeCompare(bValue);
+      });
   });
 });
